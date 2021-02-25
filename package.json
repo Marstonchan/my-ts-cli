@@ -1,23 +1,29 @@
 {
   "name": "my-ts-cli",
-  "version": "0.1.7",
-  "description": "",
+  "version": "0.1.9",
+  "description": "你可以用这个工具生成一个基本的ts项目",
+  "homepage": "https://github.com/Marstonchan/my-ts-cli",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.dev.js --progress",
+    "serve": "webpack-dev-server --config webpack.config.dev.js --progress",
     "build": "webpack"
   },
   "bin": {
     "my-ts-cli": "./bin/my-ts-cli.js"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "typescript",
+    "ts",
+    "webpack",
+    "template"
+  ],
   "author": "Marston",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^7.1.0",
     "inquirer": "^7.3.3",
-    "ip": "^1.1.5",
     "mkdirp": "^1.0.4"
   }
 }

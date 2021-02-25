@@ -1,28 +1,26 @@
 
 let htmlTemp = function (name) {
     return `
-        <!DOCTYPE html>
-        <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-        <body>
-            <script src="./${name}.js"></script>
-        </body>
+<body>
 
-        </html>
-    `
+</body>
+
+</html>`
 }
 let tsTemp = function (name) {
     return `import '../style/${name}.css';
     console.log('hello world ${name}')`
 }
-let tsConfig = `
-{
+let tsConfig = `{
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     /* Basic Options */
@@ -131,44 +129,44 @@ program.parse(process.argv);
 const subProjectName = program.opts().subProject;
 
 module.exports = {
-    entry: ` + '`./${ subProjectName }/script/${ subProjectName }.ts`' + `,
+    entry: `+ '`./${ subProjectName }/script/${ subProjectName }.ts`' + `,
     output: {
         filename: ` + '`./${ subProjectName }.js`' + `,
         path: path.resolve(__dirname, ` + '`${ subProjectName }/dist`' + `)
     },
-    devServer: {
-        host: 'localhost',
+devServer: {
+    host: 'localhost',
         open: true,
-        port: 8888,
-        hot: true
-    },
-    module: {
-        rules: [
-            {
-                test: /\.ts$/,
-                use: ['ts-loader']
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.(jpg|png|gif)$/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000,
-                        name: 'images/[name].[ext]'
-                    }
+            port: 8888,
+                hot: true
+},
+module: {
+    rules: [
+        {
+            test: /.ts$/,
+            use: ['ts-loader']
+        },
+        {
+            test: /.css$/,
+            use: ['style-loader', 'css-loader']
+        },
+        {
+            test: /.(jpg|png|gif)$/,
+            use: {
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: 'images/[name].[ext]'
                 }
             }
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: ` + '`./${ subProjectName }/${subProjectName}.html`' + `
-        })
+        }
     ]
+},
+plugins: [
+    new HtmlWebpackPlugin({
+        template: `+ '`./${subProjectName}/${subProjectName}.html`' + `
+    })
+]
 }`
 let webpack = `const { program } = require('commander');
 const path = require('path');

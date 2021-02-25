@@ -48,7 +48,7 @@ async function createObj(name) {
     console.log(chalk.cyan('模板文件创建完成!'));
 
     console.log(chalk.green('\n项目创建成功！可以使用以下命令运行项目：'))
-    console.log(chalk.magenta(`\tyarn dev -sub ${name}`))
+    console.log(chalk.magenta(`\tyarn dev -sub ${name}`), 'or', chalk.magenta(`npm run dev -- -sub ${name}`))
 }
 // 向文件中写入内容
 function writeFile(filePath, data) {
