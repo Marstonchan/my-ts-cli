@@ -13,7 +13,7 @@ module.exports = {
     entry: `./${subProjectName}/script/${subProjectName}.ts`,
     output: {
         filename: `./${subProjectName}.js`,
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, `${subProjectName}/dist`)
     },
     devServer: {
         host: 'localhost',
