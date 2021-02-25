@@ -1,6 +1,6 @@
 {
   "name": "my-ts-cli",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "你可以用这个工具生成一个基本的ts项目",
   "homepage": "https://github.com/Marstonchan/my-ts-cli",
   "main": "index.js",

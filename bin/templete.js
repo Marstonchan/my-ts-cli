@@ -1,5 +1,5 @@
 
-let htmlTemp = function (name) {
+const htmlTemp = function (name) {
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -16,11 +16,11 @@ let htmlTemp = function (name) {
 
 </html>`
 }
-let tsTemp = function (name) {
+const tsTemp = function (name) {
     return `import '../style/${name}.css';
     console.log('hello world ${name}')`
 }
-let tsConfig = `{
+const tsConfig = `{
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     /* Basic Options */
@@ -83,13 +83,13 @@ let tsConfig = `{
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   }
 }`
-let packageJSonTemp = `{
+const packageJSonTemp = `{
   "name": "index",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.dev.js --progress",
+    "serve": "webpack-dev-server --config webpack.config.dev.js --progress",
     "build": "webpack"
   },
   "keywords": [],
@@ -117,7 +117,7 @@ let packageJSonTemp = `{
   }
 }
 `
-let webpackDev = `const { program } = require('commander');
+const webpackDev = `const { program } = require('commander');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -168,7 +168,7 @@ plugins: [
     })
 ]
 }`
-let webpack = `const { program } = require('commander');
+const webpack = `const { program } = require('commander');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');

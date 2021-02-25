@@ -10,7 +10,7 @@ module.exports = async function () {
     console.log(chalk.green('\n项目初始化完成！在运行之前请先安装依赖：'))
     console.log(chalk.magenta(`\tnpm install 或 yarn`));
     console.log(chalk.green('\n安装完成后使用以下命令运行子项目'));
-    console.log(chalk.magenta(`\tyarn dev -sub <subProjectName> or npm run dev -- -sub <subProjectName>`));
+    console.log(chalk.magenta(`\tyarn serve -sub <subProjectName>`), 'or', chalk.magenta(`npm run serve -- -sub <subProjectName>`));
 }
 
 function writeFile(filePath, data) {
